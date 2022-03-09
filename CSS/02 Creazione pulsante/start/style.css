@@ -6,12 +6,6 @@ body {
 	display: none;
 } */
 
-.expandable {
-	visibility: collapse;
-	background: gray;
-	color: white;
-}
-
 #expand-btn {
 	display: inline-block;
 	margin-top: 12px;
@@ -21,3 +15,16 @@ body {
 	border-radius: 3px;
 	transition: 0.3s;
 } 
+
+
+
+.expandable{
+	visibility: collapse;
+	background: gray;
+	color: white;
+}
+
+
+#expand-toggle:checked ~ .expandable{
+	visibility: visible;
+}

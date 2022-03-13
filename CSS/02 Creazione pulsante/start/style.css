@@ -2,9 +2,19 @@ body {
 	font-family: monospace;
 }
 
-/* #expand-toggle {
+#expand-toggle {
 	display: none;
-} */
+}
+
+.nascondi{
+	display: none;
+}
+
+.expandable {
+	visibility: collapse;
+	background: gray;
+	color: white;
+}
 
 #expand-btn {
 	display: inline-block;
@@ -14,17 +24,19 @@ body {
 	border: 1px solid;
 	border-radius: 3px;
 	transition: 0.3s;
-} 
-
-
-
-.expandable{
-	visibility: collapse;
-	background: gray;
-	color: white;
 }
 
-
-#expand-toggle:checked ~ .expandable{
+#expand-toggle:checked ~ table .expandable{
 	visibility: visible;
+}
+#expand-toggle:checked ~ #expand-btn{
+	background-color: green;
+}
+
+#expand-toggle:checked ~ label .nascondi{
+	display: inline;
+}
+
+#expand-toggle:checked ~ label .mostra{
+	display: none;
 }

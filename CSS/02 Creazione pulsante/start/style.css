@@ -29,6 +29,7 @@ body {
 #expand-toggle:checked ~ table .expandable{
 	visibility: visible;
 }
+
 #expand-toggle:checked ~ #expand-btn{
 	background-color: green;
 }

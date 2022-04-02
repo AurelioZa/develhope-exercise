@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Lezione HTML</title>
+	<style>
+		label {
+			display: block
+		}
+	</style>
+</head>
+
+<body>
+    <p>
+        <label>Email:</label>
+        <input type="email" placeholder="Scrivi la tua Email">
+    </p>
+
+    <p>
+        <label>Password:</label>
+        <input type="password" placeholder="Scrivi la tua password">
+    </p>
+
+    <p>
+        <label>Nome e Cognome:</label>
+        <input type="text" name="Nome" id="nome" placeholder="Nome">
+        <input type="text" name="Cognome" id="cognome" placeholder="Cognome">
+    </p>
+
+    <p>
+        <label for="data">Seleziona la tua data di nascita </label>
+        <input type="date" name="Data" id="data" min="1900-01-01" max="2022-12-31">
+    </p>
+
+    <p>
+        <label for="telefono">Telefono</label>
+        <input type="tel" name="telefono" id="numero">
+    </p>
+
+    <p>
+        <label for="radio">Seleziona il tuo piano di abbonamento:</label>
+        <p>Piano Gratuito <input type="radio" name="free" id="free" label="Piano Gratuito" checked></p>
+        <p>Piano da 9,99€<input type="radio" name="piano1" id="piano1" label="Piano 9,99€"></p>      
+        <p>Piano da 14,99€<input type="radio" name="piano2" id="piano2" label="Piano 14,99€"></p>
+        <p>Piano da 19,99€<input type="radio" name="piano3" id="piano3" label="Piano 19,99€"></p>
+    </p>
+    <p>
+        <label for="pro">Desideri i vantaggi dei membri PRO?</label>
+        <select name="vantaggi" id="pro">
+            <option value="SI">SI</option>
+            <option value="NO">NO</option>
+        </select>
+    </p> 
+    <p>
+        <label for="carta">Inserisci i dati della carta di credito:</label>
+        <p>NUMERO: <input type="text" name="numero" id="numero"></p>
+        <p>CVC: <input type="text" name="cvc" id="cvc"></p>
+        <p>SCADENZA: <input type="date" name="scadenza" id="scad"></p>
+    </p>
+    <p>
+        <label for="fattura">Inserisci l'indirizzo di fatturazione:</label>
+        <input type="text" name="fattura" id="fatt">
+    </p>
+
+</body>
+
+</html>

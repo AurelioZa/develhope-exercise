@@ -1,0 +1,47 @@
+body{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+}
+
+
+#green{
+    grid-area: 1 / span 6 ;
+}
+
+#yellow{
+    grid-area: 2 / span 2;
+}
+
+#yellow ul{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+#yellow li{ 
+    padding: 25px 35px;
+}
+
+#red{
+    grid-area: 2 / span 2;
+}
+
+#red ul{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+#red li{ 
+    padding: 25px 33px;
+}
+
+
+#blue{
+    grid-area: 2 / 5 / span 2 / span 2;
+}
+
+#orange{
+    grid-area: 3 / span 4;
+}

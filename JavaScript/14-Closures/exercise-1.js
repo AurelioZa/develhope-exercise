@@ -1,5 +1,4 @@
-function greet(greeting) {
-}
+const greet = greeting => nome => greeting + ', ' + nome;
 
 const greetWithHello = greet('Hello');
 const greetWithBye = greet('Bye');

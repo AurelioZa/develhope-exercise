@@ -1,10 +1,11 @@
-function calculate(number) {
+function calculate() {
+  tot = 0;
   return total = { 
-    add(){ return '$this.number'},
-    multiply(){ return $this.total * number},
-    sub(){ return $this.total - number},
-    divide(){ return $this.total / number},
-    printResult(){ console.log(this.total)}
+    add(number){ tot = tot + number; return this},
+    multiply(number){ tot = tot * number; return this},
+    sub(number){ tot = tot - number; return this},
+    divide(number){ tot = tot / number; return this},
+    printResult(){ console.log(tot)}
   }
 }
 

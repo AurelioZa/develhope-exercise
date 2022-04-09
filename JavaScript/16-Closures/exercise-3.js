@@ -1,6 +1,6 @@
 function createStore() {
   const productArray = [];
-  return function (product){
+  return function list(product){
     productArray.push(product);
     console.log(productArray);
   }

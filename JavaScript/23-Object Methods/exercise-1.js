@@ -5,4 +5,10 @@ const person = {
 }
 
 // Print values of person using Object.keys
-console.log(Object.keys(person))
+let i = 0;
+
+for(let keys in person){
+  console.log(Object.keys(person)[i] + ': ' + Object.values(person)[i]);
+  i++;
+}
+

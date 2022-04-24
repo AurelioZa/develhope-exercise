@@ -6,14 +6,20 @@ class BankAccount {
   }
 
   deposit(amount) {
+    try{
     if (amount < 0) {
       throw new Error('The amount provided cannot be negative');
     }
 
     this.#amount += amount;
+    }
+    catch(err){
+      console.log(err.message);
+    }
   }
 
   withdraw(amount) {
+    try{
     if (amount < 0) {
       throw new Error('The amount provided cannot be negative');
     }
@@ -23,6 +29,11 @@ class BankAccount {
     }
 
     this.#amount -= amount;
+    }
+    catch(err){
+      console.log(err.message);
+    }
+
   }
 
   view() {

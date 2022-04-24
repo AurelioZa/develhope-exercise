@@ -22,25 +22,19 @@ class AreaCalculator {
   constructor(figure){ 
     this.figure = figure; 
   }
-  //Tramite il metodo statico calculate ed usando uno switch controllo se il valore in ingresso è presente
+  
+  //Tramite il metodo statico calculate ed usando uno switch controllo se il valore in ingresso è presente 
   static calculate(calculater){
   switch(calculater){
     case 
-      square: class calcuateSquare extends Square{
-        
-
-       }
+      square: return square.side * square.side //se presente calcolo l'area prendendo i valori dati
       
     case
-      rectangle: class calcuateRectangle extends Rectangle{
-        
-     }
+      rectangle: return rectangle.width * rectangle.height
      
     case
-      circle: class calcuateCircle extends Circle{
-        
-     }
-     
+      circle: return Math.pow(circle.radius,2) * Math.PI
+
     }
   }
 }

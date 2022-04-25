@@ -13,3 +13,5 @@ for (let item of Object.entries(person)) {
   console.log(`${item[0]}: ${item[1]}`);
 }
 */
+
+console.log(id, firstName, lastName, age);

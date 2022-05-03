@@ -16,24 +16,32 @@ class BankAccount {
   view() {
     console.log(this.#amount);
   }
+
+  get dato() {
+    return (this.#amount)
+  }
+
+  set dato(val) {
+    this.#amount = val;
+  }
+
 }
 
 class BankAccountVip extends BankAccount{
 
-  /*constructor(saldo){
-    this.saldo = saldo;
-  }*/
-
-  deposit(deposito){
-    return this.saldo += deposito;
+  constructor(dato){
+    super(dato);
   }
 
-  withdraw(prelievo){
-    return this.saldo -= prelievo;
-  }
+  deposit(amount) {
+    if (this.dato >= 1000) {
+      amount += (amount * 3 / 100);
+      this.dato += amount;
+    }
+    else {
+      this.dato = amount;
+    }
 
-  view(){
-    console.log(this.saldo);
   }
 
 }

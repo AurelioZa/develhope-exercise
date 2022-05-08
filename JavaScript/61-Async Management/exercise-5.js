@@ -35,3 +35,39 @@ const jobs = [
 ];
 
 // core here
+
+function fetchPersonId(id){
+  return new Promise((resolve,reject) => {
+    setTimeout(() => { 
+    if(persons.find((item) => item.id === id)){
+      resolve (persons.find((item) => item.id === id))
+    }else{
+      return reject ('ID Non trovato')
+    }},1000)
+  })
+}
+
+function fetchJobId(id){
+  return new Promise((resolve, reject) => {
+    setTimeout( () => {
+    if(jobs.find((item) => item.id === id)){
+      resolve (jobs.find((item) => item.id === id))
+    }else{
+      return reject ('ID Non trovato')
+    }},500)
+  })
+}
+
+function print(id){
+  Promise.race([fetchPersonId(id),fetchJobId(id)])
+  .then((first) => {
+    if(first.jobTitle === undefined){
+      console.log(first.id, first.firstName, first.lastName)
+    }else{
+      console.log(first.id, first.jobTitle)
+    }
+  })
+  .catch((err) => console.log(err))
+}
+
+print(4)

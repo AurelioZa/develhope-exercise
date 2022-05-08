@@ -38,7 +38,7 @@ const jobs = [
 function fetchPersonId(id){
   return new Promise((resolve,reject) => {
     if(persons.find((item) => item.id === id)){
-      return resolve ('Ritorno la persona')
+      resolve (persons.find((item) => item.id === id))
     }else{
       return reject ('ID Non trovato')
     }
@@ -48,7 +48,8 @@ function fetchPersonId(id){
 function fetchJobId(id){
   return new Promise((resolve, reject) => {
     if(jobs.find((item) => item.id === id)){
-      return resolve ('Ritorno il lavoro')
+      return resolve (jobs.find((item) => item.id === id))
+
     }else{
       return reject ('ID Non trovato')
     }
@@ -58,7 +59,7 @@ function fetchJobId(id){
 async function print(id){
   const person = await fetchPersonId(id);
   const job = await fetchJobId(id);
-  return console.log(person), console.log(job);
+  return console.log(person.lastName, person.firstName, job.jobTitle);
 }
 
 print(2)

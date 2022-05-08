@@ -33,7 +33,16 @@ function fetchPersonById(id) {
   });
 }
 
-fetchPersonById(2)
-  .then((personJson) => JSON.parse(personJson))
-  .then((person) => console.log(person))
-  .catch((err) => console.error(err));
+// fetchPersonById(2)
+//   .then((personJson) => JSON.parse(personJson))
+//   .then((person) => console.log(person))
+//   .catch((err) => console.error(err));
+
+async function printconsole(id){
+    const personID = await fetchPersonById(id);
+    const parseJSON = await JSON.parse(personID);
+    console.log(parseJSON)
+  }
+
+printconsole(2)
+.catch((err) => console.error(err));

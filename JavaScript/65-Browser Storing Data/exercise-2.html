@@ -12,4 +12,14 @@
 
 <script>
   // code here
+  let buttonFetch = document.getElementById('fetch-post');
+  let postSpan = document.getElementById('post-title');
+  buttonFetch.onclick = () => { 
+    console.log('Hai cliccato e sto recuperando il post dalla localStorage!');
+    let jsonPost = JSON.parse(localStorage.getItem('body'));
+    postSpan.insertAdjacentText('afterbegin',jsonPost.body);
+  }
+  
+  
+
 </script>

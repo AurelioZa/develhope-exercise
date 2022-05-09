@@ -1,0 +1,24 @@
+<html>
+  <body>
+    <div id="container">
+      <button type="button" id="fetch-post">Fetch Post</button>
+      <button type="button" id="save-post">Save Post on LocalStorage</button>
+    </div>
+  </body>
+</html>
+
+<script>
+  // code here
+  let buttonFetch = document.getElementById('fetch-post');
+  let buttonSave = document.getElementById('save-post');
+  buttonFetch.onclick = () => { 
+    console.log('Hai cliccato e sto recuperando il post!');
+    let response = fetch('https://jsonplaceholder.typicode.com/posts/1');
+    let post = response.json();
+    console.log(post.userid);
+  };
+  
+  buttonSave.onclick = () => {
+    localStorage.setItem(savecache)
+  }
+</script>

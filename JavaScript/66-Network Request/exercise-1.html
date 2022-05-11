@@ -8,4 +8,23 @@
 
 <script>
   // code here
+  // console.log('Recupero la lista todos e aggiungo i titoli') 
+  let cache = [];
+  async function getListContent() {
+    let response = await fetch('https://jsonplaceholder.typicode.com/todos')
+      .then(response => response.json())
+      .then(todos => cache = todos)
+      .catch(err => console.log(err));
+
+    cache.forEach((element) => {
+      let li = document.createElement("li");
+      let titleList = document.createTextNode(element.title);
+      li.appendChild(titleList);
+      document.getElementsByClassName("todo-list")[0].appendChild(li);
+    })
+  }
+
+  window.addEventListener("ListContent", getListContent())
+  
+  
 </script>

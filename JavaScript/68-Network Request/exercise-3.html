@@ -1,7 +1,7 @@
 <html>
   <body>
     <div id="container">
-      <form>
+      <form id="form">
         <div>
           <label>Title</label>
           <input type="text" id="todo-title" />
@@ -11,12 +11,37 @@
           <input type="checkbox" id="todo-completed" />
         </div>
 
-        <button type="submit" id="submit-todo"></button>
+        <button type="submit" id="submit-todo">Invia</button>
       </form>
     </div>
   </body>
 </html>
 
 <script>
-  // code here
+  async function formSend(){
+    let url = 'https://jsonplaceholder.typicode.com/posts';
+
+    let objectPost = {
+     title : document.getElementById('todo-title').value,
+     completed : document.getElementById('todo-completed').checked
+    }
+
+    console.log(objectPost)
+
+    
+    let response = await fetch(url,{
+      method: 'POST',
+      headers: {'Content-type': 'application/json; charset = utf-8'},
+      body: JSON.stringify()
+    });
+
+    let bodyPost = await response.json();
+    console.log(bodyPost)
+  }
+
+  document.getElementById('submit-todo').onclick = () => {
+    event.preventDefault();
+    formSend();
+  }
+
 </script>

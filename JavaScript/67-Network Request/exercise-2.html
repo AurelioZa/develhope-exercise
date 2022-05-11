@@ -6,4 +6,24 @@
 
 <script>
   // code here
+  let cache = ""
+  async function getListContent() {
+    let response = await fetch('https://jsonplaceholder.typicode.com/todos/4')
+      .then(response => response.json())
+      .then(todos => cache = todos )
+      .catch(err => console.log(err));
+    
+    let heading = document.createElement('h2');
+    
+    let checkbox = document.createElement('input');
+    
+    heading.innerHTML = cache.title;
+
+    checkbox.type = "checkbox";
+    checkbox.setAttribute('checked',true);
+
+    document.getElementById('container').appendChild(heading).appendChild(checkbox);
+  }
+
+  window.addEventListener('List', getListContent())
 </script>

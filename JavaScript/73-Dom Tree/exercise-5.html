@@ -12,4 +12,19 @@
 
 <script>
   // code here
+  let column = (name) => {
+        let td = document.createElement('td');
+        td.textContent = name;
+        return td;
+      }
+
+  document.querySelector('#add-row').addEventListener('click', 
+    () => {
+      let trow = document.createElement('tr');
+      trow.append(column('firsName'));
+      trow.append(column('lastName'));
+      trow.append(column('age'));
+      document.querySelector('tbody').append(trow);    
+    })
 </script>
+

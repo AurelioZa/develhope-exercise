@@ -24,7 +24,11 @@
     let labelPrint = document.querySelectorAll('label');
     let inputPrint = document.querySelectorAll('.form-input');
 
-    for (let i = 0; i < labelPrint.length; i++) {
-      console.log(labelPrint[i].textContent + ' ' + inputPrint[i].value)
-    };
+    // for (let i = 0; i < labelPrint.length; i++) {
+    //   console.log(labelPrint[i].textContent + ' ' + inputPrint[i].value)
+    // };
+
+    labelPrint.forEach((label,i) => {
+      console.log(labelPrint[i].outerText + ' ' + inputPrint[i].value);
+    })
 </script>

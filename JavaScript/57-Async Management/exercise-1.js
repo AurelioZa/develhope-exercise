@@ -21,8 +21,16 @@ const persons = [
 
 function fetchPersonById(id) {
   // code here 
-  return new Promise((resolve) => resolve(persons.find(item => item.id === id)));
-  };
+  return new Promise((resolve,reject) => {
+    if(persons.find(item => item.id === id)){
+      resolve(persons.find(item => item.id === id));
+    }else{
+      reject('Id non trovato')
+    }
+  })
+};
 
 // code here
-fetchPersonById(1).then((person) => console.log(person));
+fetchPersonById(1)
+.then((person) => console.log(person))
+.catch((err) => console.log(err));

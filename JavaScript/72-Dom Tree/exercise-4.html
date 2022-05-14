@@ -25,10 +25,15 @@
   let inputPrint = document.querySelectorAll('.form-input');
   let person = {};
 
-  for(let i=0; i < labelPrint.length; i++){ 
-    person[labelPrint[i].textContent] = inputPrint[i].value;  
-  };
+  // for(let i=0; i < labelPrint.length; i++){ 
+  //   person[labelPrint[i].textContent] = inputPrint[i].value;  
+  // };
+
+  labelPrint.forEach((label,i) => {person[labelPrint[i].textContent] = inputPrint[i].value;})
+
+
   console.log(person);
 
+  
   document.querySelector('form').setAttribute('data-person', JSON.stringify(person));
 </script>

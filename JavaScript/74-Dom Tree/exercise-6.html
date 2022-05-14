@@ -16,41 +16,70 @@
   window.addEventListener('load',
   initForm = () => {
 
-    const labelFirst = document.createElement('label');
-    labelFirst.innerText = 'First Name:';
+    inputForm = (type, name, label) =>{ 
+      inputData = document.createElement('input');
+      inputData.type = type;
+      inputData.name = name;
+      inputData.id = name;
+
+      let inputLabel = document.createElement('label');
+      inputLabel.innerText = label;
+      
+      personform.prepend(inputData);
+      personform.prepend(inputLabel);
+    }
+
     
-    const inputFirstName = document.createElement('input')
-    inputFirstName.type = 'text';
-    inputFirstName.name = 'firstname'
+    inputForm('number','age','Age: ')
+    inputForm('text','lastname','Last Name: ')
+    inputForm('text','firstname','First Name: ')
 
-    const labelLast = document.createElement('label');
-    labelLast.innerText = 'Last Name:';
+    // const labelFirst = document.createElement('label');
+    // labelFirst.innerText = 'First Name:';
     
-    const inputLastName = document.createElement('input')
-    inputLastName.type = 'text';
-    inputLastName.name = 'lastname'
+    // const inputFirstName = document.createElement('input')
+    // inputFirstName.type = 'text';
+    // inputFirstName.name = 'firstname'
+    // inputFirstName.id = 'firstname'
 
-    const labelAge = document.createElement('label');
-    labelAge.innerText = 'Age:';
+    // const labelLast = document.createElement('label');
+    // labelLast.innerText = 'Last Name:';
     
-    const inputAge = document.createElement('input')
-    inputAge.type = 'number';
-    inputAge.name = 'age'
+    // const inputLastName = document.createElement('input')
+    // inputLastName.type = 'text';
+    // inputLastName.name = 'lastname'
+    // inputFirstName.id = 'lastname'
 
-    personform.prepend(inputAge);
-    personform.prepend(labelAge);
+    // const labelAge = document.createElement('label');
+    // labelAge.innerText = 'Age:';
+    
+    // const inputAge = document.createElement('input')
+    // inputAge.type = 'number';
+    // inputAge.name = 'age';
+    // inputFirstName.id = 'age'
 
-    personform.prepend(inputLastName);
-    personform.prepend(labelLast);
+    // personform.prepend(inputAge);
+    // personform.prepend(labelAge);
 
-    personform.prepend(inputFirstName);
-    personform.prepend(labelFirst);
-  })
+    // personform.prepend(inputLastName);
+    // personform.prepend(labelLast);
+
+    // personform.prepend(inputFirstName);
+    // personform.prepend(labelFirst);
 
   personform.addEventListener('submit', 
     submitPersonForm = (event) =>{
       event.preventDefault();
+
       console.log('Cliccato sul tasto!')
-      let person = {}
+
+       let person = {
+         firstname: document.querySelector('#firstname').value,
+         lastname: document.querySelector('#lastname').value,
+         age: document.querySelector('#age').value
+       };
+
+      console.log(person);
     })
+  })
 </script>

@@ -18,6 +18,10 @@ import Welcome6 from "./ConditionalRendering/ConditionalRendering2/Welcome";
 import Welcome7 from "./ConditionalRendering/ConditionalRendering3/Welcome";
 import Welcome8 from "./ConditionalRendering/ConditionalRendering3/Welcome";
 import Welcome9 from "./ConditionalRendering/ConditionalRendering4/Welcome";
+import {Counter} from "./State/State1";
+import {Counter1} from "./State/State3";
+import {Counter2} from "./State/State4/State4";
+import {Counter3} from "./ComponentLifecycle/ComponentLifecycle1/State4";
 
 const jsxTagStrong = <strong>Nome Proprio</strong>
 
@@ -43,6 +47,10 @@ function App() {
         <Welcome7 name={"Un Anziano"} age={64}/>
         <Welcome8 name={"Joh"} age={64}/>
         <Welcome9 name={"BigData"} age={16}/>
+        <Counter />
+        <Counter1 initialValue={10}/>
+        <Counter2 initialValue={50}/>
+        <Counter3 initialValue={5}/>
     </div>
   );
 }

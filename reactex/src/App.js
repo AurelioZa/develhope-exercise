@@ -22,6 +22,10 @@ import {Counter} from "./State/State1";
 import {Counter1} from "./State/State3";
 import {Counter2} from "./State/State4/State4";
 import {Counter3} from "./ComponentLifecycle/ComponentLifecycle1/State4";
+import ClickCounter from "./Events/Events1";
+import ClickTracker from "./Events/Event3";
+import {InteractiveWelcome} from "./Forms/Form1/Forms1";
+import {Login} from "./Forms/Form2/Forms2";
 
 const jsxTagStrong = <strong>Nome Proprio</strong>
 
@@ -51,6 +55,10 @@ function App() {
         <Counter1 initialValue={10}/>
         <Counter2 initialValue={50}/>
         <Counter3 initialValue={5}/>
+          <ClickCounter />
+          <ClickTracker />
+          <InteractiveWelcome />
+        <Login/>
     </div>
   );
 }

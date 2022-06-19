@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import Welcomename from "./Welcomename";
 
 
@@ -27,7 +27,7 @@ export class Login2 extends React.Component{
         console.log(this.state)
     }
 
-    resetButton = (event) =>{
+    resetButton = () =>{
 
         this.setState(
             {

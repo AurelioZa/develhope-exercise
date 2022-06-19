@@ -30,6 +30,10 @@ import {Login1} from "./Exercise/Forms/Form3/Forms3";
 import {Login2} from "./Exercise/Forms/Form4/Forms4";
 import {UncontrolledLogin} from "./Exercise/Forms/Form5/Forms5";
 import {UncontrolledLogin1} from "./Exercise/Forms/Form6/Forms6";
+import TodoList from "./Exercise/Lists/Lists3/Lists3";
+import TodoList1 from "./Exercise/Lists/Lists4/Lists4";
+import TodoList2 from "./Exercise/Lists/Lists5/Lists5";
+import TodoList3 from "./Exercise/Lists/Lists6/Lists6";
 
 
 const jsxTagStrong = <strong>Nome Proprio</strong>
@@ -68,7 +72,10 @@ function App() {
         <Login2/>
         <UncontrolledLogin/>
         <UncontrolledLogin1/>
-
+          <TodoList />
+          <TodoList1 />
+          <TodoList2 />
+          <TodoList3 />
     </div>
   );
 }

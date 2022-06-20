@@ -34,6 +34,11 @@ import TodoList from "./Exercise/Lists/Lists3/Lists3";
 import TodoList1 from "./Exercise/Lists/Lists4/Lists4";
 import TodoList2 from "./Exercise/Lists/Lists5/Lists5";
 import TodoList3 from "./Exercise/Lists/Lists6/Lists6";
+import WelcomeStyle from "./Exercise/StylingComponents/StylingComponents1/Welcome";
+import {LoginStyle} from "./Exercise/StylingComponents/StylingComponents3/Forms3";
+import Container from "./Exercise/ComponentComposition/ComponentComposition1/ComponentComposition1";
+import Container1 from "./Exercise/ComponentComposition/ComponentComposition2/ComponentComposition1";
+import TodoListRender from "./Exercise/RenderProps/Lists";
 
 
 const jsxTagStrong = <strong>Nome Proprio</strong>
@@ -72,10 +77,27 @@ function App() {
         <Login2/>
         <UncontrolledLogin/>
         <UncontrolledLogin1/>
-          <TodoList />
-          <TodoList1 />
-          <TodoList2 />
-          <TodoList3 />
+        <TodoList />
+        <TodoList1 />
+        <TodoList2 />
+        <TodoList3 />
+        <WelcomeStyle name={"Aurelio"}/>
+        <LoginStyle />
+        <Container children={<h1>Children Component</h1>} title={<h1>Title Component</h1>}/>
+        <Container1 children={<h2>Children Component</h2>} title={<h1>Title Component</h1>}/>
+        <TodoListRender render={(items, remove) => (
+              <ul>
+                  {items.map((items,i) =>(
+                      <li key={i}>
+                          {items}
+                          <button type={"button"} onClick={remove.bind(this, i)}>X</button>
+                      </li>))
+                  }
+              </ul>)
+        }/>
+        <div>
+
+          </div>
     </div>
   );
 }

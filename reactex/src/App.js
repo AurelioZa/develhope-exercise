@@ -39,9 +39,17 @@ import {LoginStyle} from "./Exercise/StylingComponents/StylingComponents3/Forms3
 import Container from "./Exercise/ComponentComposition/ComponentComposition1/ComponentComposition1";
 import Container1 from "./Exercise/ComponentComposition/ComponentComposition2/ComponentComposition1";
 import TodoListRender from "./Exercise/RenderProps/Lists";
+import {Context1} from "./Exercise/Context/Context1/Context1";
+import Sum from "./Exercise/FunctionComponents/FunctionComponents2/Sum";
+import WelcomeFunction from "./Exercise/FunctionComponents/FunctionComponents1/Welcome";
+import Sum1 from "./Exercise/FunctionComponents/FunctionComponents3/Sum1";
+import ClickCounterState from "./Exercise/UseState/UseState1/Events1";
+import LoginState from "./Exercise/UseState/UseState2/Forms3";
+
 
 
 const jsxTagStrong = <strong>Nome Proprio</strong>
+
 
 function App() {
 
@@ -95,11 +103,17 @@ function App() {
                   }
               </ul>)
         }/>
-        <div>
-
-          </div>
+          {/*<Context1/>*/}
+          <WelcomeFunction name={'Aurelio'}/>
+          <Sum array={[4,6,5,10,5]} />
+          <Sum1 />
+          <ClickCounterState />
+          <LoginState/>
     </div>
   );
 }
 
+Sum1.defaultProps = {
+      array: [4,6,5,10,5]
+}
 export default App;

@@ -1,57 +1,70 @@
-import React from "react";
+import React, {useState} from "react";
 import './App.css';
-import Jsx01 from "./Exercise/JSX/Jsx01";
-import Jsx02 from "./Exercise/JSX/Jsx02";
-import Jsx05 from "./Exercise/JSX/Jsx05";
-import Clean from "./Exercise/Components/Components1";
-import Appx from "./Exercise/Components/Components3";
-import Hello from "./Exercise/Components/Components2";
-import Hello1 from "./Exercise/Components/Components6";
-import Hello2 from "./Exercise/Components/Component7/Components7";
-import Welcome from "./Exercise/Props/Props1/Welcome";
-import Welcome1 from "./Exercise/Props/Props2/Welcome";
-import Welcome2 from "./Exercise/Props/Props3/Welcome";
-import Welcome3 from "./Exercise/Props/Props4/Welcome";
-import Welcome4 from "./Exercise/Props/Props5/Welcome";
-import Welcome5 from "./Exercise/ConditionalRendering/ConditionalRendering1/Welcome";
-import Welcome6 from "./Exercise/ConditionalRendering/ConditionalRendering2/Welcome";
-import Welcome7 from "./Exercise/ConditionalRendering/ConditionalRendering3/Welcome";
-import Welcome8 from "./Exercise/ConditionalRendering/ConditionalRendering3/Welcome";
-import Welcome9 from "./Exercise/ConditionalRendering/ConditionalRendering4/Welcome";
-import {Counter} from "./Exercise/State/State1";
-import {Counter1} from "./Exercise/State/State3";
-import {Counter2} from "./Exercise/State/State4/State4";
-import {Counter3} from "./Exercise/ComponentLifecycle/ComponentLifecycle1/State4";
-import ClickCounter from "./Exercise/Events/Events1";
-import ClickTracker from "./Exercise/Events/Event3";
-import {InteractiveWelcome} from "./Exercise/Forms/Form1/Forms1";
-import {Login} from "./Exercise/Forms/Form2/Forms2";
-import {Login1} from "./Exercise/Forms/Form3/Forms3";
-import {Login2} from "./Exercise/Forms/Form4/Forms4";
-import {UncontrolledLogin} from "./Exercise/Forms/Form5/Forms5";
-import {UncontrolledLogin1} from "./Exercise/Forms/Form6/Forms6";
-import TodoList from "./Exercise/Lists/Lists3/Lists3";
-import TodoList1 from "./Exercise/Lists/Lists4/Lists4";
-import TodoList2 from "./Exercise/Lists/Lists5/Lists5";
-import TodoList3 from "./Exercise/Lists/Lists6/Lists6";
-import WelcomeStyle from "./Exercise/StylingComponents/StylingComponents1/Welcome";
-import {LoginStyle} from "./Exercise/StylingComponents/StylingComponents3/Forms3";
-import Container from "./Exercise/ComponentComposition/ComponentComposition1/ComponentComposition1";
-import Container1 from "./Exercise/ComponentComposition/ComponentComposition2/ComponentComposition1";
-import TodoListRender from "./Exercise/RenderProps/Lists";
-import {Context1} from "./Exercise/Context/Context1/Context1";
-import Sum from "./Exercise/FunctionComponents/FunctionComponents2/Sum";
-import WelcomeFunction from "./Exercise/FunctionComponents/FunctionComponents1/Welcome";
-import Sum1 from "./Exercise/FunctionComponents/FunctionComponents3/Sum1";
-import ClickCounterState from "./Exercise/UseState/UseState1/Events1";
-import LoginState from "./Exercise/UseState/UseState2/Forms3";
+import Jsx01 from "./Exercise/01JSX/Jsx01";
+import Jsx02 from "./Exercise/01JSX/Jsx02";
+import Jsx05 from "./Exercise/01JSX/Jsx05";
+import Clean from "./Exercise/02Components/Components1";
+import Appx from "./Exercise/02Components/Components3";
+import Hello from "./Exercise/02Components/Components2";
+import Hello1 from "./Exercise/02Components/Components6";
+import Hello2 from "./Exercise/02Components/Component7/Components7";
+import Welcome from "./Exercise/03Props/Props1/Welcome";
+import Welcome1 from "./Exercise/03Props/Props2/Welcome";
+import Welcome2 from "./Exercise/03Props/Props3/Welcome";
+import Welcome3 from "./Exercise/03Props/Props4/Welcome";
+import Welcome4 from "./Exercise/03Props/Props5/Welcome";
+import Welcome5 from "./Exercise/04ConditionalRendering/ConditionalRendering1/Welcome";
+import Welcome6 from "./Exercise/04ConditionalRendering/ConditionalRendering2/Welcome";
+import Welcome7 from "./Exercise/04ConditionalRendering/ConditionalRendering3/Welcome";
+import Welcome8 from "./Exercise/04ConditionalRendering/ConditionalRendering3/Welcome";
+import Welcome9 from "./Exercise/04ConditionalRendering/ConditionalRendering4/Welcome";
+import {Counter} from "./Exercise/05State/State1";
+import {Counter1} from "./Exercise/05State/State3";
+import {Counter2} from "./Exercise/05State/State4/State4";
+import {Counter3} from "./Exercise/06ComponentLifecycle/ComponentLifecycle1/State4";
+import ClickCounter from "./Exercise/07Events/Events1";
+import ClickTracker from "./Exercise/07Events/Event3";
+import {InteractiveWelcome} from "./Exercise/08Forms/Form1/Forms1";
+import {Login} from "./Exercise/08Forms/Form2/Forms2";
+import {Login1} from "./Exercise/08Forms/Form3/Forms3";
+import {Login2} from "./Exercise/08Forms/Form4/Forms4";
+import {UncontrolledLogin} from "./Exercise/08Forms/Form5/Forms5";
+import {UncontrolledLogin1} from "./Exercise/08Forms/Form6/Forms6";
+import TodoList from "./Exercise/09Lists/Lists3/Lists3";
+import TodoList1 from "./Exercise/09Lists/Lists4/Lists4";
+import TodoList2 from "./Exercise/09Lists/Lists5/Lists5";
+import TodoList3 from "./Exercise/09Lists/Lists6/Lists6";
+import WelcomeStyle from "./Exercise/10StylingComponents/StylingComponents1/Welcome";
+import {LoginStyle} from "./Exercise/10StylingComponents/StylingComponents3/Forms3";
+import Container from "./Exercise/11ComponentComposition/ComponentComposition1/ComponentComposition1";
+import Container1 from "./Exercise/11ComponentComposition/ComponentComposition2/ComponentComposition1";
+import TodoListRender from "./Exercise/12RenderProps/Lists";
+import {Context1} from "./Exercise/13Context/Context1/Context1";
+import Sum from "./Exercise/14FunctionComponents/FunctionComponents2/Sum";
+import WelcomeFunction from "./Exercise/14FunctionComponents/FunctionComponents1/Welcome";
+import Sum1 from "./Exercise/14FunctionComponents/FunctionComponents3/Sum1";
+import ClickCounterState from "./Exercise/15UseState/UseState1/useState1";
+import LoginState from "./Exercise/15UseState/UseState2/useState2";
+import ClickCounterEffect from "./Exercise/16UseEffect/UseEffect1/useEffect1";
+import CounterEffect from "./Exercise/16UseEffect/UseEffect2/useEffect2";
+import GithubUser from "./Exercise/16UseEffect/UseEffect3/GithubUser";
 
 
 
 const jsxTagStrong = <strong>Nome Proprio</strong>
 
+Sum1.defaultProps = {
+      array: [4,6,5,10,5]
+}
+
+
 
 function App() {
+      {/* useEffect1 */}
+      const onCounterChange= (counter) => console.log("Counter value: ", {counter})
+      {/* useEffect2 */}
+      const [mount, setMount] = useState(true)
+      const handleMount = () => { setMount((mount) => !mount)};
 
   return (
     <div className="App">
@@ -109,11 +122,17 @@ function App() {
           <Sum1 />
           <ClickCounterState />
           <LoginState/>
+          <h1>useEffect - 1</h1>
+          <ClickCounterEffect onCounterChange={onCounterChange}/>
+          <h1>useEffect - 2</h1>
+        {/*
+        <button onClick={handleMount}>Mount Counter</button>
+        {mount && <CounterEffect />}
+        <h1>useEffect - 3</h1>
+        <GithubUser username={"AurelioZa"}/>
+        */}
     </div>
   );
 }
 
-Sum1.defaultProps = {
-      array: [4,6,5,10,5]
-}
 export default App;

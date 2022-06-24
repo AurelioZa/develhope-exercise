@@ -48,6 +48,7 @@ import LoginState from "./Exercise/15UseState/UseState2/useState2";
 import ClickCounterEffect from "./Exercise/16UseEffect/UseEffect1/useEffect1";
 import CounterEffect from "./Exercise/16UseEffect/UseEffect2/useEffect2";
 import GithubUser from "./Exercise/16UseEffect/UseEffect3/GithubUser";
+import HookCounter from "./Exercise/17CustomHooks/CustomHooks1/HookCounter";
 
 
 
@@ -129,8 +130,9 @@ function App() {
         <button onClick={handleMount}>Mount Counter</button>
         {mount && <CounterEffect />}
         <h1>useEffect - 3</h1>
-        <GithubUser username={"AurelioZa"}/>
-        */}
+        <GithubUser username={"AurelioZa"} />*/}
+          <HookCounter />
+
     </div>
   );
 }

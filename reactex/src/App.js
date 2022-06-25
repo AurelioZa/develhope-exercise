@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {Routes, Route, Link} from "react-router-dom";
 import './App.css';
 import Jsx01 from "./Exercise/01JSX/Jsx01";
 import Jsx02 from "./Exercise/01JSX/Jsx02";
@@ -49,6 +50,12 @@ import ClickCounterEffect from "./Exercise/16UseEffect/UseEffect1/useEffect1";
 import CounterEffect from "./Exercise/16UseEffect/UseEffect2/useEffect2";
 import GithubUser from "./Exercise/16UseEffect/UseEffect3/GithubUser";
 import HookCounter from "./Exercise/17CustomHooks/CustomHooks1/HookCounter";
+import CarDetails from "./Exercise/18UseRef/CarDetails";
+import FilteredList from "./Exercise/21UseMemo/FilteredList";
+import Root from "./Root";
+import ShowGithubUser from "./Exercise/22ReactRouter/ShowGithubUser";
+import Error404 from "./Exercise/22ReactRouter/Error404";
+import GithubUserList from "./Exercise/16UseEffect/UseEffect4/GithunUserList";
 
 
 
@@ -58,14 +65,17 @@ Sum1.defaultProps = {
       array: [4,6,5,10,5]
 }
 
-
-
 function App() {
-      {/* useEffect1 */}
-      const onCounterChange= (counter) => console.log("Counter value: ", {counter})
-      {/* useEffect2 */}
-      const [mount, setMount] = useState(true)
-      const handleMount = () => { setMount((mount) => !mount)};
+    {/* useEffect1 */}
+    const onCounterChange= (counter) => console.log("Counter value: ", {counter})
+    {/* useEffect2 */}
+    const [mount, setMount] = useState(true)
+    const handleMount = () => { setMount((mount) => !mount)};
+    const list = [
+        {name: 'Aurelio', age: 38, id: 1},
+        {name: 'Adriano', age: 40, id: 2},
+        {name: 'Floriana', age: 15, id: 3}
+    ]
 
   return (
     <div className="App">
@@ -107,15 +117,14 @@ function App() {
         <LoginStyle />
         <Container children={<h1>Children Component</h1>} title={<h1>Title Component</h1>}/>
         <Container1 children={<h2>Children Component</h2>} title={<h1>Title Component</h1>}/>
-        <TodoListRender render={(items, remove) => (
-              <ul>
+        <TodoListRender render={(items, remove) => <ul>
                   {items.map((items,i) =>(
                       <li key={i}>
                           {items}
                           <button type={"button"} onClick={remove.bind(this, i)}>X</button>
                       </li>))
                   }
-              </ul>)
+              </ul>
         }/>
           {/*<Context1/>*/}
           <WelcomeFunction name={'Aurelio'}/>
@@ -131,10 +140,27 @@ function App() {
         {mount && <CounterEffect />}
         <h1>useEffect - 3</h1>
         <GithubUser username={"AurelioZa"} />*/}
-          <HookCounter />
+        <HookCounter />
 
-    </div>
-  );
+        <CarDetails initialData={{model: 'Duster', color: 'Gray', year: 2021, }}/>
+
+        <FilteredList list={list}/>
+
+        <ul>
+            <li> <Link to="/">Homepage</Link> </li>
+            <li> <Link to="/counter">Counter</Link> </li>
+            <li> <Link to="/users/AurelioZa">Users</Link> </li>
+        </ul>
+        <Routes>
+            <Route path={"/"} element={<Welcome name={'Aurelio'} />} />
+            <Route path={"/counter"} element={<ClickCounterState />} />
+            <Route path={"/users/:username"} element={<ShowGithubUser />} />
+            <Route path={"users"} element={<GithubUserList />}>
+                <Route path={":username"} element={<ShowGithubUser />} />
+            </Route>
+            <Route path={"*"} element={<Error404 />} />
+        </Routes>
+    </div>)
 }
 
 export default App;

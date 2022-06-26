@@ -55,7 +55,12 @@ import FilteredList from "./Exercise/21UseMemo/FilteredList";
 import Root from "./Root";
 import ShowGithubUser from "./Exercise/22ReactRouter/ShowGithubUser";
 import Error404 from "./Exercise/22ReactRouter/Error404";
-import GithubUserList from "./Exercise/16UseEffect/UseEffect4/GithunUserList";
+import GithubUserList from "./Exercise/16UseEffect/UseEffect4/GithubUserList";
+import GithubUserListLink from "./Exercise/22ReactRouter/GithubUserList";
+import GithubUserSWR from "./Exercise/23SWR/SWR1/GithubUserSWR";
+import GithubUserSWR2 from "./Exercise/23SWR/SWR2/GithubUserSWR2";
+import GithubUserSWR3 from "./Exercise/23SWR/SWR3/GithubUserSWR3";
+
 
 
 
@@ -146,20 +151,27 @@ function App() {
 
         <FilteredList list={list}/>
 
+        <Routes>
+            <Route path={"/"} element={<Welcome name={'Aurelio'} />} />
+            <Route path={"/counter"} element={<ClickCounterState />} />
+            <Route path={"/users/:username"} element={<ShowGithubUser />} />
+            <Route path={"users"} element={<GithubUserListLink />}>
+                {/*<Route path={":username"} element={<ShowGithubUser/>}/>*/}
+                <Route index element={<p>Add a user and select it</p>}/>
+                <Route index path={":username"} element={<ShowGithubUser/>}/>
+            </Route>
+
+            <Route path={"*"} element={<Error404 />} />
+        </Routes>
+
         <ul>
             <li> <Link to="/">Homepage</Link> </li>
             <li> <Link to="/counter">Counter</Link> </li>
             <li> <Link to="/users/AurelioZa">Users</Link> </li>
         </ul>
-        <Routes>
-            <Route path={"/"} element={<Welcome name={'Aurelio'} />} />
-            <Route path={"/counter"} element={<ClickCounterState />} />
-            <Route path={"/users/:username"} element={<ShowGithubUser />} />
-            <Route path={"users"} element={<GithubUserList />}>
-                <Route path={":username"} element={<ShowGithubUser />} />
-            </Route>
-            <Route path={"*"} element={<Error404 />} />
-        </Routes>
+        <GithubUserSWR username={"AurelioZa"}/>
+        <GithubUserSWR2 username={""}/>
+        <GithubUserSWR3 username={"AurelioZa"}/>
     </div>)
 }
 

@@ -23,6 +23,7 @@ const languagesObj2: Country<string[]> = {
     languages: ["Spanish", "Catalan", "Galician", "Basque", "Valencian"],
 };
 
+// @ts-ignore
 console.log(languagesObj2.languages.join(", "));
 
 // ----

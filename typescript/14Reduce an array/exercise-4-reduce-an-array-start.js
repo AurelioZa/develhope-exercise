@@ -20,5 +20,5 @@ var populations = [
 // Hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
 var sumOfPopulations = populations.reduce(function (total, population) {
     return total + population;
-}, 0);
+});
 console.log(sumOfPopulations);

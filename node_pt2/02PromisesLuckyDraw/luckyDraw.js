@@ -11,3 +11,11 @@ function luckyDraw(player) {
         });
     });
 }
+
+luckyDraw("Joe")
+    .then((data) => console.log(data))
+    .then(() => luckyDraw("Sabrine"))
+    .then((data) => console.log(data))
+    .then(() => luckyDraw("Caroline"))
+    .then((data) => console.log(data))
+    .catch(err => console.error(err))
